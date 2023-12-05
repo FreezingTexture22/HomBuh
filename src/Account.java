@@ -7,7 +7,7 @@ public class Account {
 
     public Account(String name, BigDecimal balance) {
         this.name = name;
-        this.balance = balance;
+        this.balance = balance.setScale(2, RoundingMode.HALF_EVEN);
     }
 
     public String getName() {
@@ -19,10 +19,10 @@ public class Account {
     }
 
     public BigDecimal getBalance() {
-        return balance.setScale(2, RoundingMode.HALF_EVEN);
+        return balance;
     }
 
     void setBalance(BigDecimal balance) {
-        this.balance = balance;
+        this.balance = balance.setScale(2, RoundingMode.HALF_EVEN);
     }
 }

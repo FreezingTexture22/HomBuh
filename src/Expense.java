@@ -1,20 +1,19 @@
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Currency;
 
 public class Expense {
-    private LocalDate date;
-    private LocalTime time;
+    private LocalDateTime dateTime;
     private BigDecimal sum;
     private Currency currency;
     private String category;
     private Account account;
     private String note;
 
-    Expense(LocalDate date, LocalTime time, BigDecimal sum, Currency currency, String category, Account account, String note) {
-        this.date = date;
-        this.time = time;
+
+    Expense(LocalDateTime dateTime, BigDecimal sum, Currency currency, String category, Account account, String note) {
+        this.dateTime = dateTime;
         this.sum = sum;
         this.currency = currency;
         this.category = category;
@@ -23,20 +22,12 @@ public class Expense {
 
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
     public BigDecimal getSum() {
