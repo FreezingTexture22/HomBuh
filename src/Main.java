@@ -2,9 +2,13 @@ import java.math.BigDecimal;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Currency;
+//import org.javamoney.calc.*;
+//import javax.money.MonetaryAmount;
+
 
 public class Main {
     public static void main(String[] args) {
+
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd, hh:mm");
         /**
          *
@@ -18,7 +22,7 @@ public class Main {
         sumAsString = sumAsString.replace(" ", "");
 
         // check if sum input is valid
-        BigDecimal sum = new BigDecimal("0");
+        BigDecimal sum;
         if(!CheckInputs.isSumValid(sumAsString)) {
             System.out.printf("Sum input %s is wrong. Must be RUB.KOP (123.01)", sumAsString);
             return;
@@ -41,7 +45,6 @@ public class Main {
         System.out.println(e1.getAccount());
         System.out.println(e1.getNote());
         System.out.println(raiffaisenCard.getBalance());
-
 
 
     }
