@@ -7,7 +7,7 @@ import java.util.Currency;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd, hh:mm");
         /**
@@ -45,6 +45,21 @@ public class Main {
         System.out.println(e1.getAccount());
         System.out.println(e1.getNote());
         System.out.println(raiffaisenCard.getBalance());
+        System.out.println("Writing expense to CSV file");
+
+        String[] data = {
+                e1.getDateTime().toString(),
+                e1.getSum().toString(),
+                e1.getCategory(),
+                e1.getAccount(),
+                e1.getNote()
+        };
+
+        //// write expense to a CSV file
+        WriteToFile.writeExpenseToCSV(data);
+
+
+
 
 
     }
