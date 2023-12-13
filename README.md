@@ -2,7 +2,7 @@
 JAVA pet project. 
 
 ### Maintainability Badge
-Placeholder for Maintainability Badge codeclimate.com
+<a href="https://codeclimate.com/github/FreezingTexture22/HomBuh/maintainability"><img src="https://api.codeclimate.com/v1/badges/4904f9ea3a695b847945/maintainability" /></a>
 
 ### Changelog
 Nothing here for now.
