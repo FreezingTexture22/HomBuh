@@ -13,7 +13,6 @@ public class WriteToFile {
         //URL fileUrl = WritingCSVFileExample.class.getClassLoader().getResource("data.csv");
         CSVWriter writer = new CSVWriter(new FileWriter(path.toString(), true)); //true, if want to append
 
-
         //Write the record to file
         writer.writeNext(data, true); // true if want each item in " "
 
