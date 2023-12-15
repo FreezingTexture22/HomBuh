@@ -9,4 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="opencsv" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="bd9b27b4-8c35-498a-8c21-885e256ca569" />
+  </component>
 </module>
