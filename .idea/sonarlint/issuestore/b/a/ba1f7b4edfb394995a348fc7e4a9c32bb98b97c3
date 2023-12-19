@@ -1,6 +1,0 @@
-
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(›Â¥‰øÿÿÿÿ8è¹ìôÆ1
-d
-java:S2095"GUse try-with-resources or close this "CSVReader" in a "finally" clause.(¬Ôç‡8õóìôÆ1
-^
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(¿×‰®8ì¹ìôÆ1

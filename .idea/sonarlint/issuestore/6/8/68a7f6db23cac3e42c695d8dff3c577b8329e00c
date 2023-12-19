@@ -1,4 +1,7 @@
 
-[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÍíØì
-W
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(¿×‰®
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÍíØì
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(À“Ãº8ŸÚå›È1
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(Ğ¼îşøÿÿÿÿ8¾•êøÆ1
+c
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(®ºö€øÿÿÿÿ8«Úå›È1

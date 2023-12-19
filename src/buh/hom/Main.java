@@ -2,6 +2,7 @@ package buh.hom;
 
 import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Currency;
 import java.util.List;
 
@@ -12,12 +13,17 @@ public class Main {
     // set currency
     static Currency rub = Currency.getInstance("RUB");
     //// generate some test data and create new expense object
-    static Account account = new Account("Raiffaisen Card", new BigDecimal(1000));
+
     static String sumAsString = "0";
     static BigDecimal sum;
     static String category;
     static String note;
     static List<String[]> loadedData;
+    static List<Account> accountList = new ArrayList<>();
+
+    static {
+        Account.loadAccounts();
+    }
 
     public static void main(String[] args) throws Exception {
         LoadExpensesFromFile.loadAtStart();

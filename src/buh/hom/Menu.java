@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private Menu() {} //security
+    private Menu() {
+    } //security
 
     public static boolean mainMenu() throws Exception {
         System.out.println("************************************************************");
@@ -17,45 +18,63 @@ public class Menu {
         System.out.println("    3 - see all accounts");
         System.out.println("    4 - add an expense");
         System.out.println("    5 - add an addition");
+        System.out.println("    6 - add an account");
         System.out.print("Enter command: ");
 
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
 
-        if (input.equals("exit")) {
-            System.out.print("Bye!");
-            return false;
+        switch (input) {
+            case "exit" -> {
+                System.out.print("Bye!");
+                return false;
+            }
+            case "1" -> {
+                LoadExpensesFromFile.loadAtStart();
+                PrintOut.printAllExpenses(Main.loadedData);
+                return true;
+            }
+            case "3" -> {
 
-        } else if (input.equals("1")){
-            LoadExpensesFromFile.loadAtStart();
-            PrintOut.printAllExpenses(Main.loadedData);
-            return true;
+                Account.printAllAccounts(Main.accountList);
+            }
+            case "4" -> {
+                UserInput.testInput();//test user input
+                //Account.loadAccounts();
+                Account account = Main.accountList.get(0);
+                Expense expense = Expense.addExpense(LocalDateTime.now(), Main.sum, Main.rub, Main.category, account, Main.note);
 
-        } else if (input.equals("4")) {
-            UserInput.testInput();//test user input
+                PrintOut.printNewExpense(expense);
 
-            Expense expense = Expense.addExpense(LocalDateTime.now(), Main.sum, Main.rub, Main.category, Main.account, Main.note);
+                String[] data = {
+                        expense.getDateTime().toString(),
+                        expense.getSum().toString(),
+                        expense.getCategory(),
+                        expense.getAccount().toString(),
+                        expense.getNote()
+                };
 
-            PrintOut.printNewExpense(expense);
+                System.out.println("Writing expense to CSV file");
+                WriteToFile.writeExpenseToCSV(data);
+                return true;
+            }
 
-            String[] data = {
-                    expense.getDateTime().toString(),
-                    expense.getSum().toString(),
-                    expense.getCategory(),
-                    expense.getAccount().toString(),
-                    expense.getNote()
-            };
+            case "test" -> {
+//
 
-            System.out.println("Writing expense to CSV file");
-            WriteToFile.writeExpenseToCSV(data);
-            return true;
+                for (Account a : Main.accountList) {
+                    System.out.println(a.getName());
+                    System.out.println(a.getBalance());
+                }
 
-        } else {
-            return true;
+
+            }
+
+            default -> {
+                return true;
+            }
         }
 
-
-
+        return true;
     }
-
 }

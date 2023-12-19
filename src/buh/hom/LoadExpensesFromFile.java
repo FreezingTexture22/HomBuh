@@ -1,30 +1,41 @@
 package buh.hom;
 
 import com.opencsv.CSVReader;
+
 import java.io.File;
 import java.io.FileReader;
 import java.nio.file.Path;
+import java.util.Collections;
 import java.util.List;
 
 public class LoadExpensesFromFile {
 
-    private LoadExpensesFromFile() {}
+    private LoadExpensesFromFile() {
+    }
 
-    public static List<String[]> loadExpensesFromCSV() throws Exception {
+    public static List<String[]> loadExpensesFromCSV() {
 
         // default file path, for test reasons
-        File file = new File("C:\\Users\\artelx\\IdeaProjects\\HomBuh\\data1.csv");
+        String tempFilePath = "C:\\Users\\artelx\\IdeaProjects\\HomBuh\\expenses.csv";
+
+        File file = new File(tempFilePath);
         Path path = Path.of(file.getAbsolutePath());
 
         //Build reader instance
-        CSVReader reader = new CSVReader(new FileReader(path.toString()));
 
-        //Read all rows at once
-        return reader.readAll();
+        try (CSVReader reader = new CSVReader(new FileReader(path.toString()))) {
+            return reader.readAll();
 
+        } catch (Exception e) {
+            System.out.println(e.toString());
+
+        }//Read all rows at once
+
+
+        return Collections.emptyList(); //just a placeholder
     }
 
-    public static void loadAtStart() throws Exception {
+    public static void loadAtStart() {
         Main.loadedData = loadExpensesFromCSV();
     }
 

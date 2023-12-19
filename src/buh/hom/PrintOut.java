@@ -3,8 +3,9 @@ package buh.hom;
 import java.util.List;
 
 public class PrintOut {
-    private PrintOut() {}
-    
+    private PrintOut() {
+    }
+
     public static void printNewExpense(Expense expense) {
         System.out.println(expense.getDateTime().format(Main.dateTimeFormatter));
         System.out.println(expense.getSum() + " " + expense.getCurrency());
@@ -15,13 +16,13 @@ public class PrintOut {
         System.out.println("======================");
     }
 
-    public static void printAllExpenses (List<String[]> loadedData) {
-       for (String[] item : loadedData) {
-           System.out.println("Expense:");
-           for (String i : item) {
-               System.out.println(i);
-           }
-           System.out.println("=========");
-       }
+    public static void printAllExpenses(List<String[]> loadedData) {
+        for (String[] item : loadedData) {
+            System.out.println("Expense:");
+            for (String i : item) {
+                System.out.println(i);
+            }
+            System.out.println("=========");
+        }
     }
 }
