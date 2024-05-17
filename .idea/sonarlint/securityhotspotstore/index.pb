@@ -97,3 +97,9 @@ Q.idea/sonarlint/securityhotspotstore/3/c/3cfe28c884993bf7bf5b719e9b729e5eb86474
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+>
+src/Money.java,0\0\0086bd6e7dd658df5b10396ccf9b799bb140438a
+F
+src/buh/hom/Money.java,0\e\0eb818f7e5539e6471a2173d25ce1db63030f12f
+J
+src/buh/hom/TestMoney.java,c\1\c1fb61b0bdf670790cf547b56c324baafb7b55d6
