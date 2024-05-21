@@ -17,6 +17,13 @@ public class Money {
         amount = amount.add(addedMoney);
     }
 
+    public BigDecimal subtractMoney(BigDecimal subtractedMoney) {
+        subtractedMoney = subtractedMoney.setScale(DECIMALS, ROUNDING_MODE);
+        amount = amount.subtract(subtractedMoney);
+        return amount;
+    }
+
+
     public BigDecimal getAmount() {
         return amount;
     }

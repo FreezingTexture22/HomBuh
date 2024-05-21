@@ -25,7 +25,7 @@ public class Expense {
 
     public static Expense addExpense(LocalDateTime dateTime, BigDecimal sum, Currency currency,
                                      String category, Account account, String note) {
-        account.setBalance(account.getBalance().subtract(sum));
+        account.setBalance(account.getBalance().subtractMoney(sum));
         return new Expense(dateTime, sum, currency, category, account, note);
     }
 

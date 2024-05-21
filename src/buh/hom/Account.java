@@ -12,16 +12,16 @@ import java.util.List;
 
 public class Account {
     private String name;
-    private BigDecimal balance;
+    private Money balance;
 
-    public Account(String name, BigDecimal balance) {
+    public Account(String name, Money balance) {
         this.name = name;
-        this.balance = balance.setScale(2, RoundingMode.HALF_EVEN);
+        this.balance = balance;
     }
 
     public static List<String[]> loadAccountsFromCSV() {
 
-        // default file path, for test reasons
+        // default file path, for test
         String tempFilePath = "C:\\Users\\artelx\\IdeaProjects\\HomBuh\\accounts.csv";
 
         File file = new File(tempFilePath);
@@ -41,7 +41,7 @@ public class Account {
     public static void loadAccounts() {
         for (String[] item : loadAccountsFromCSV()) {
             String name = item[0];
-            BigDecimal balance = new BigDecimal(item[1]);
+            Money balance = new Money(new BigDecimal(item[1]));
             Main.accountList.add(new Account(name, balance));
         }
     }
@@ -63,12 +63,12 @@ public class Account {
         this.name = name;
     }
 
-    public BigDecimal getBalance() {
+    public Money getBalance() {
         return balance;
     }
 
-    void setBalance(BigDecimal balance) {
-        this.balance = balance.setScale(2, RoundingMode.HALF_EVEN);
+    void setBalance(Money balance) {
+        this.balance = balance;
     }
 
     public String toString() {
