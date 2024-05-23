@@ -17,10 +17,10 @@ public class Money {
         amount = amount.add(addedMoney);
     }
 
-    public Money subtractMoney(BigDecimal subtractedMoney) {
+    public void subtractMoney(BigDecimal subtractedMoney) {
         subtractedMoney = subtractedMoney.setScale(DECIMALS, ROUNDING_MODE);
         amount = amount.subtract(subtractedMoney);
-        return amount;
+        //return new Money(amount);
     }
 
 
