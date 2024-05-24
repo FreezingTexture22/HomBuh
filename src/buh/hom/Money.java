@@ -20,7 +20,6 @@ public class Money {
     public void subtractMoney(BigDecimal subtractedMoney) {
         subtractedMoney = subtractedMoney.setScale(DECIMALS, ROUNDING_MODE);
         amount = amount.subtract(subtractedMoney);
-        //return new Money(amount);
     }
 
 

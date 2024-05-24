@@ -40,7 +40,7 @@ public class Menu {
             }
             case "4" -> {
                 UserInput.testInput();//test user input
-                //Account.loadAccounts();
+
                 Account account = Main.accountList.get(0);
                 Expense expense = Expense.addExpense(LocalDateTime.now(), Main.sum, Main.rub, Main.category, account, Main.note);
 
