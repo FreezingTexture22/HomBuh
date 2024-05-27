@@ -22,14 +22,14 @@ public class LoadExpensesFromFile {
         Path path = Path.of(file.getAbsolutePath());
 
         //Build reader instance
-
         try (CSVReader reader = new CSVReader(new FileReader(path.toString()))) {
             return reader.readAll();
 
         } catch (Exception e) {
             System.out.println(e.toString());
 
-        }//Read all rows at once
+        }
+        //Read all rows at once
 
 
         return Collections.emptyList(); //just a placeholder
