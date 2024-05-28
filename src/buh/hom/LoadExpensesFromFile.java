@@ -15,7 +15,7 @@ public class LoadExpensesFromFile {
 
     public static List<String[]> loadExpensesFromCSV() {
 
-        // default file path, for test reasons
+        // default file path, for test purpose
         String tempFilePath = "C:\\Users\\artelx\\IdeaProjects\\HomBuh\\expenses.csv";
 
         File file = new File(tempFilePath);
