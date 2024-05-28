@@ -1,8 +1,0 @@
-<component name="libraryTable">
-  <library name="javamoney.lib.calc" type="repository">
-    <properties maven-id="org.javamoney.lib:javamoney-calc:1.1" />
-    <CLASSES />
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
